@@ -1,4 +1,32 @@
-.primeiraClasse{
+.conteiners{
+
+	background-color: #747485;
+	display: grid;
+	grid-template-columns: 100%;
+	align-items: flex-start;
 	
-	color: blue;
+	
+}
+.painelBranco{
+
+	background-color: blue;
+	display: grid;
+	grid-template-columns: 1% 98% 1%;
+	height: 90%;
+
+}
+.painelToDo{
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+	background-color: white;
+	height: 40%;
+
+}
+.titulo{
+	
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	font-family: impact;
 }
