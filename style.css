@@ -3,9 +3,40 @@
 	background-color: #747485;
 	display: block;
 	padding: 10px;
-
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
+
 	
+}
+.botaoMais{
+
+	background-color: transparent;
+	border: 2px solid black;
+	width: 5%;
+	float: right;
+	height: 35px;
+	text-align: center;
+
+
+}
+.botaoMais:hover{
+
+	background-color: blue;
+
+}
+.item{
+
+	border: 2px solid black;
+	background-color: transparent;
+	margin: 10px;
+
+}
+.background-item-title{
+
+	text-align: center;
+
+
 }
 .painelBranco{
 
@@ -19,6 +50,8 @@
 }
 .painelToDo{
 
+	overflow-y: auto;
+	max-height: 90vh;
 	grid-column-start: 1;
 	grid-column-end: 2;
 	background-color: white;
@@ -28,7 +61,8 @@
 
 }
 .painelInProgress{
-
+	overflow-y: auto;
+	max-height: 90vh;
 	grid-column-start: 2;
 	grid-column-end: 3;
 	background-color: white;
@@ -37,7 +71,8 @@
 
 }
 .painelReview{
-
+	overflow-y: auto;
+	max-height: 90vh;
 	grid-column-start: 3;
 	grid-column-end: 4;
 	background-color: white;
@@ -46,7 +81,8 @@
 
 }
 .painelComplete{
-
+	overflow-y: auto;
+	max-height: 90vh;
 	grid-column-start: 4;
 	grid-column-end: 5;
 	background-color: white;
@@ -71,6 +107,7 @@
 	font-family: impact;
 	font-size: 20px;
 	padding-top: 8px;
+	padding-bottom: 8px;
 
 }
 .titulo{
@@ -79,4 +116,8 @@
 	text-align: center;
 	font-size: 30px;
 	font-family: impact;
+	width: 90%;
+	float: inherit;
+	margin-top: 1em;
+
 }

@@ -7,10 +7,46 @@
 <body>
 
 	<div class="conteiners">
-		<p class="titulo"> Task Panel </p>
+		<h1 class="titulo"> Task Panel
+			<!--
+			<div class="botaoMais" id="botao">+</div>
+			-->
+			<button id='bmais' class="botaoMais">+</button>
+
+
+			<script src="jquery.min.js"></script>
+			<script type="text/javascript">
+
+				let item_counter_toDo = 0;
+				
+				$('#bmais').click(function(){
+					document.getElementById('background-tp').innerHTML +=`
+					<div id='item-id${item_counter_toDo}' class="item">
+						<div class="background-item">
+							<div class = "background-item-title">
+								<h2 id='item-title-id${item_counter_toDo}'
+								class="item-title">
+									Testado
+								</h2>
+							<div>
+							<div class="background-item-content">
+								<p class="item-text">
+									teste testado testing
+								</p>
+							<div>
+							<button class="item-aprove-btn">passar</button>
+						</div>
+					</div>
+					`;
+					item_counter_toDo++;
+				});
+			</script>
+
+		</h1>
+
 		<div class="painelBranco">
 			<div class="painelToDo">
-				<div class="backgroundTituloPainel">
+				<div id='background-tp' class="backgroundTituloPainel">
 					<p class="tituloPainel">To Do</p>
 				</div>
 				
