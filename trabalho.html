@@ -26,21 +26,26 @@
 							<div class = "background-item-title">
 								<h2 id='item-title-id${item_counter_toDo}'
 								class="item-title">
-									Testado
+									Tarefa
 								</h2>
-							<div>
+							</div>
 							<div class="background-item-content">
 								<p class="item-text">
 									teste testado testing
 								</p>
-							<div>
-							<button class="item-aprove-btn">passar</button>
+							</div>
+							<div class="background-aprove-btn">
+								<button id='done${item_counter_toDo}' class="item-aprove-btn" onclick="passaPraLa1(${item_counter_toDo})">Done</button>
+							</div>
+
 						</div>
 					</div>
 					`;
 					item_counter_toDo++;
 				});
 			</script>
+
+
 
 		</h1>
 
@@ -51,8 +56,9 @@
 				</div>
 				
 			</div>
-			<div class="painelInProgress">
-				<div class="backgroundTituloPainel">
+
+			<div id="painelip" class="painelInProgress">
+				<div id='background-tpip' class="backgroundTituloPainel">
 					<p class="tituloPainel">In Progress</p>
 				</div>
 			</div>
@@ -66,6 +72,23 @@
 					<p class="tituloPainel">Complete</p>
 				</div>
 			</div>
+
+			<script type="text/javascript">
+				
+				function passaPraLa1(id){
+					//alert("passou");
+					
+					var esseAqui = $('#item-id'+id);
+					var painel = $('#painelip');
+
+					painel.append(esseAqui);
+
+					//document.getElementById('background-tpip').innerHTML += esseAqui;
+					
+				}
+
+
+			</script>
 		</div>
 		
 

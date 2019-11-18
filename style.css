@@ -32,10 +32,40 @@
 	margin: 10px;
 
 }
+.item-title{
+
+	font-family: impact;
+	font-weight: 200;
+
+}
 .background-item-title{
 
 	text-align: center;
+	border-bottom: 2px solid black;
 
+}
+.background-item-content{
+
+	border-bottom: 2px solid black;
+}
+.item-aprove-btn{
+
+	background-color: transparent;
+	border: 2px solid black;
+	font-weight: 700;
+
+}
+.item-aprove-btn:hover{
+
+	background-color: blue;
+	color: white;
+
+}
+.background-aprove-btn{
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
 
 }
 .painelBranco{
