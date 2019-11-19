@@ -13,11 +13,14 @@
 			-->
 			<button id='bmais' class="botaoMais">+</button>
 
-
+			<!--
 			<script src="jquery.min.js"></script>
+			-->
+			<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 			<script type="text/javascript">
 
 				let item_counter_toDo = 0;
+				let metaDadosItens = [];
 				
 				$('#bmais').click(function(){
 					document.getElementById('background-tp').innerHTML +=`
@@ -41,6 +44,7 @@
 						</div>
 					</div>
 					`;
+					metaDadosItens[item_counter_toDo] = 1;
 					item_counter_toDo++;
 				});
 			</script>
@@ -62,12 +66,12 @@
 					<p class="tituloPainel">In Progress</p>
 				</div>
 			</div>
-			<div class="painelReview">
+			<div id="painelr" class="painelReview">
 				<div class="backgroundTituloPainel">
 					<p class="tituloPainel">Review</p>
 				</div>
 			</div>
-			<div class="painelComplete">
+			<div id="painelc" class="painelComplete">
 				<div class="backgroundTituloPainel">
 					<p class="tituloPainel">Complete</p>
 				</div>
@@ -76,15 +80,45 @@
 			<script type="text/javascript">
 				
 				function passaPraLa1(id){
-					//alert("passou");
+					
 					
 					var esseAqui = $('#item-id'+id);
-					var painel = $('#painelip');
 
-					painel.append(esseAqui);
+					if (metaDadosItens[id] == 1) {
 
-					//document.getElementById('background-tpip').innerHTML += esseAqui;
-					
+						var painel = $('#painelip');
+
+						painel.append(esseAqui);
+
+						metaDadosItens[id] += 1;
+
+					}
+					else if (metaDadosItens[id] == 2) {
+
+						var painel = $('#painelr');
+
+						painel.append(esseAqui);
+
+						metaDadosItens[id] += 1;
+					}
+					else if (metaDadosItens[id] == 3){
+
+						var painel = $('#painelc');
+
+						painel.append(esseAqui);
+
+						metaDadosItens[id] += 1;
+
+					}
+					else if (metaDadosItens[id] == 4){
+
+						
+						esseAqui.remove();
+
+						metaDadosItens[id] += 1;
+
+					}
+										
 				}
 
 
