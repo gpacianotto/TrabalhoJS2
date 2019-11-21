@@ -13,16 +13,17 @@
 			<p class="labelInputTitle">Descrição</p>
 			<textarea rows="7" cols="25" class="inputs" id="taDescricao"></textarea><br>
 
-			<button class="botaoSalvar" onclick="criarItem()"><p class="textoBotaoSalvar">Salvar</p></button>
+			<button id="botaosalvar1" class="botaoSalvar" onclick="criarItem(); atualizaBarra();"><p class="textoBotaoSalvar">Salvar</p></button>
 
 			<script type="text/javascript">
 
-				let item_counter_toDo = 0;
-				let metaDadosItens = [];
+				var item_counter_toDo = 0;
+				var metaDadosItens = [];
 				let metaDadosEditar = [];
 
 				function criarItem(){
 
+					
 					var titulo = document.getElementById("inputTitulo").value;
 					var descricao = document.getElementById("taDescricao").value;
 					
@@ -42,7 +43,7 @@
 									</p>
 								</div>
 								<div class="background-aprove-btn">
-									<button id='done${item_counter_toDo}' class="item-aprove-btn" onclick="passaPraLa1(${item_counter_toDo})">Done</button>
+									<button id='done${item_counter_toDo}' class="item-aprove-btn" onclick="passaPraLa1(${item_counter_toDo}); atualizaBarra();">Done</button>
 								</div>
 
 							</div>
@@ -54,6 +55,11 @@
 					document.getElementById("inputTitulo").value = "";
 					document.getElementById("taDescricao").value = "";
 					document.getElementById("overlay").style.display = "none";
+
+					
+					
+
+
 
 				}
 
@@ -90,6 +96,22 @@
 
 
 		</h1>
+		<div class="barraProgresso">
+			<div id="barraProgressoToDo1" class="barraProgressoToDo">
+				
+			</div>
+			<div id="barraProgressoEmProgresso1" class="barraProgressoEmProgresso">
+			
+			</div>
+			<div id="barraProgressoRevisao1" class="barraProgressoRevisao">
+				
+			</div>
+			<div id="barraProgressoCompleto1" class="barraProgressoCompleto">
+				
+			</div>
+			
+		</div>
+		
 
 		<div class="painelBranco">
 			<div class="painelToDo">
@@ -100,12 +122,7 @@
 
 							while(contador < item_counter_toDo)
 							{
-								var elementoAtual = $('#item-id'+contador);
-								if ((elementoAtual != null) && (metaDadosEditar[elementoAtual] == 1)){
-
-
-
-								}
+								
 								contador++;
 							}
 
@@ -173,11 +190,78 @@
 						metaDadosItens[id] += 1;
 
 					}
+					
 
 				}
 
 
 			</script>
+			<script type="text/javascript">
+					function atualizaBarra(){
+
+						let quantidadeNasColunas = [];
+
+						quantidadeNasColunas[0] = 0;
+						quantidadeNasColunas[1] = 0;
+						quantidadeNasColunas[2] = 0;
+						quantidadeNasColunas[3] = 0;
+
+						$(document).ready(function(){
+
+						let contador = 0;
+
+						//var barra1 = $('#barraProgressoToDo1');
+						let barra1 = document.getElementById("barraProgressoToDo1");
+						
+						let barra2 = document.getElementById("barraProgressoEmProgresso1");
+						let barra3 = document.getElementById("barraProgressoRevisao1");
+						let barra4 = document.getElementById("barraProgressoCompleto1");
+						
+						while(contador < metaDadosItens.length)
+						{
+							var aux = metaDadosItens[contador];
+							quantidadeNasColunas[aux] += 1;
+							contador++;
+						}
+						
+						console.log("passou aqui");
+						//console.log(quantidadeNasColunas[0]);
+						if (quantidadeNasColunas[0] == 0){
+							barra1.style.display = "none";
+						}
+						else{
+							barra1.style.display = "block";
+						}
+						if (quantidadeNasColunas[1] == 0){
+							barra2.style.display = "none";
+						}
+						else{
+							barra2.style.display = "block";
+						}
+							if (quantidadeNasColunas[2] == 0){
+							barra3.style.display = "none";
+						}
+						else{
+							barra3.style.display = "block";
+						}
+
+						if (quantidadeNasColunas[3] == 0){
+							barra4.style.display = "none";
+						}
+						else{
+							barra4.style.display = "block";
+						}
+						barra1.style.flex = quantidadeNasColunas[0];
+						barra2.style.flex = quantidadeNasColunas[1];
+						barra3.style.flex = quantidadeNasColunas[2];
+						barra4.style.flex = quantidadeNasColunas[3];
+						
+					});
+
+					}
+				</script>
+			
+			
 		</div>
 		
 

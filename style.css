@@ -228,3 +228,48 @@
 	font-weight: 900;
 
 }
+.barraProgresso{
+	display: flex;
+
+}
+.barraProgressoToDo{
+
+	/*flex: 1;*/
+	display: none;
+	background-color: #9A65F8;
+	height: 50%;
+	width: 1px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+
+}
+.barraProgressoEmProgresso{
+	/*flex: 1;*/
+	display: none;
+	background-color: #65F88B;
+	height: 50%;
+	width: 1px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+
+}
+.barraProgressoRevisao{
+	/*flex: 1;*/
+	display: none;
+	background-color: #F8A365;
+	height: 50%;
+	width: 1px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+
+}
+.barraProgressoCompleto{
+	/*flex: 1;*/
+	display: none;
+	background-color: #F865D9;
+	height: 50%;
+	width: 1px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+
+}
